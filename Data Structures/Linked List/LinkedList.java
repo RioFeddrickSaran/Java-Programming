@@ -15,7 +15,6 @@ class LinkedList{
         while(temp.next!=null){
             temp=temp.next;}
         temp.next=newNode;}
-        
     void display(){
         Node temp=head;
         while(temp!=null){
