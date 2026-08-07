@@ -11,7 +11,8 @@ class LinkedList{
         Node temp=head;
         Node newNode=new Node(data);
         if(head==null){
-            head=newNode;}
+            head=newNode;
+            return;}
         while(temp.next!=null){
             temp=temp.next;}
         temp.next=newNode;}
@@ -19,11 +20,13 @@ class LinkedList{
         Node temp=head;
         while(temp!=null){
             System.out.print(temp.data+"->");
-            temp=temp.next;}}}
+            temp=temp.next;}
+        System.out.print("null");}}
+public class Main{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
         LinkedList list=new LinkedList();
         for(int i=0;i<n;i++){
-            insert(sc.nextInt());}
-        display();}
+            list.insert(sc.nextInt());}
+        list.display();}}
