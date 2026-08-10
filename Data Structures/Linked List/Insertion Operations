@@ -1,0 +1,49 @@
+import java.util.Scanner;
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;}}
+class LinkedList{
+    Node head;
+    void insertHead(int data){
+        Node newNode=new Node(data);
+        newNode.next=head;
+        head=newNode;}
+    void insertTail(int data){
+        Node newNode=new Node(data);
+        Node temp=head;
+        if(head==null){
+            head=newNode;
+            return;}
+        while(temp.next!=null){
+            temp=temp.next;}
+            temp.next=newNode;}
+    void insertIndex(int data,int index){
+        Node temp=head;
+        if(index==0){
+            Node newNode=new Node(data);
+            newNode.next=head;
+            head=newNode;}
+        Node newNode=new Node(data);
+        for(int i=0;i<index-1;i++){
+            temp=temp.next;}
+        newNode.next=temp.next;
+        temp.next=newNode;}
+    void display(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+" ");
+            temp=temp.next;}}}
+public class Main{
+    public static void main(String[] args){
+        LinkedList list=new LinkedList();
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=0;i<n;i++){
+            list.insertTail(sc.nextInt());}
+            list.insertHead(sc.nextInt());
+            list.insertIndex(sc.nextInt(),sc.nextInt());
+            list.display();}}
+        
